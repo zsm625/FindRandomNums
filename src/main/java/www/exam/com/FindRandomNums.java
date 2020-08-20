@@ -110,6 +110,8 @@ public class FindRandomNums {
 		List<Integer> n = new ArrayList<>(); 
 		int size = 0;
 //		System.out.println("temp:");
+		
+		//模拟给List中添加50万数据，此处并没有从文件中取出对应数据
 		for(int i=0;i<50;i++) {
 			for(int j=0;j<10000;j++) {
 				int temp = i*10+j;
