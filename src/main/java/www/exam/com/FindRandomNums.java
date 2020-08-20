@@ -12,6 +12,13 @@ import java.util.List;
 import java.util.Random;
 
 public class FindRandomNums {
+        private static File file = new File("/src/main/resources/nums_50.txt");
+	
+	static {
+		if(!file.exists()) {
+			file.mkdir();
+		}
+	}
 	public HashSet<Integer> returnRandomNums(List<List<Integer>> nums) {
 		Random random = new Random();
 		//从50个List里随机抽出
@@ -38,7 +45,7 @@ public class FindRandomNums {
 		FileWriter fw = null;
 		BufferedWriter bw = null;
 		try {
-			fw = new FileWriter(new File("F:\\Workspace\\FindRandomNums\\src\\main\\resources\\nums_50.txt"),true);
+			fw = new FileWriter(file,true);
 			bw = new BufferedWriter(fw);
 			int size = 1;
 			for (Integer in : set) {
